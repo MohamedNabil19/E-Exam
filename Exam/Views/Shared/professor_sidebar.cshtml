@@ -1,0 +1,61 @@
+﻿<style>
+    /* The side navigation menu */
+    .sidebar {
+        margin: 0px;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+    }
+
+        /* Sidebar links */
+        .sidebar a {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+            /* Active/current link */
+            .sidebar a.active {
+                background-color: #2c8ae1;
+                color: white;
+            }
+
+            /* Links on mouse-over */
+            .sidebar a:hover:not(.active) {
+                background-color: #2c8ae1;
+                color: white;
+            }
+
+    /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+    div.content {
+        margin-left: 250px;
+        padding: 1px 16px;
+        height: 100%;
+        margin-top: 30px;
+    }
+
+    .navbar-fixed-top {
+        background-color: #f1f1f1;
+        color: #2542e3;
+    }
+
+        .navbar-fixed-top li:hover {
+            background-color: #8fc5f1;
+            color: white;
+        }
+
+        .navbar-fixed-top li:active {
+            background-color: #4CAF50;
+            color: white;
+        }
+</style>
+
+<div class="sidebar">
+    <div class="active"> @Html.ActionLink("Profile", "ProfessorPage", "Professors")</div>
+    <div>@Html.ActionLink("My Subject", "ProfessorSubjects", "Subjects")</div>
+        <div> @Html.ActionLink("Add Model for Exam", "AddExam", "ExamQuestions")</div>
+</div>

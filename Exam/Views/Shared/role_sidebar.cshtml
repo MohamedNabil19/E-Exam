@@ -1,0 +1,19 @@
+﻿@if ((Convert.ToString(Session["rule"]))=="")
+{
+    @Html.Partial("nothing")
+
+}
+else if ((Convert.ToString(Session["rule"])) == "professor")
+{
+    @Html.Partial("professor_sidebar")
+}
+else if ((Convert.ToString(Session["rule"])) == "student")
+{
+    @Html.Partial("student_sidebar")
+
+}
+else if ((Convert.ToString(Session["rule"])) == "admin")
+{
+    @Html.Partial("admin_sidebar")
+
+}

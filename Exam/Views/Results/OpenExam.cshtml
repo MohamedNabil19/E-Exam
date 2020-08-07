@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Exam.Models.Result>
+
+@{
+    ViewBag.Title = "OpenExam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>OpenExam</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.result1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.grade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.S_GPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartExam)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.result1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.S_GPA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject.name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.StartExam)
+            </td>
+        </tr>
+    }
+
+</table>

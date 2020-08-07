@@ -1,0 +1,60 @@
+﻿@model Exam.Models.TFquestion
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TFquestion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Chapter.Subject.name)
+
+
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Chapter.Subject.name)
+
+        </dd>
+          <dt>
+            @Html.DisplayNameFor(model => model.content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.correct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.def_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.def_level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chapter.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chapter.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TF_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

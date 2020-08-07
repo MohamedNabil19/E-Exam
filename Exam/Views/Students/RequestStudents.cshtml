@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Exam.Models.Student>
+
+@{
+    ViewBag.Title = "RequestStudents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RequestStudents</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.passwod)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.approval)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Department.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Level.L_id)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.passwod)
+            </td>
+
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.approval)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Level.L_id)
+            </td>
+            <td>
+                @Html.ActionLink("Approve", "Approve", new { id = item.ST_id }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.ST_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ST_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ST_id })
+            </td>
+        </tr>
+    }
+
+</table>
+

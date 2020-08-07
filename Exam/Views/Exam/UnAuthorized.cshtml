@@ -1,0 +1,116 @@
+﻿
+@*
+    @model Exam.Models.MCQquestion
+*@
+@{
+    ViewBag.Title = "UnAuthorized";
+}
+
+<h2>UnAuthorized</h2>
+
+@*
+<h2>NextQuestionMCQ</h2>
+@Html.DisplayNameFor(model => model.Chapter.Subject.name)
+
+
+<h4>Question</h4>
+<hr />
+
+    <div  >
+        @using (Ajax.BeginForm("CorrectAnswerMCQ", "Exam", new AjaxOptions { HttpMethod = "Post" ,UpdateTargetId="s" , InsertionMode=InsertionMode.Replace}))
+        {
+
+            @Html.AntiForgeryToken()
+            <div id="s"> @Html.Partial("CorrectAnswer") </div>
+           
+             @*
+    <div id="@Model.content">
+        <dl class="dl-horizontal">
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Chapter.name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Chapter.name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Chapter.Subject.name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Chapter.Subject.name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.def_level)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.def_level)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.content)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.content)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.option1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.option1)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.optoin2)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.optoin2)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.option3)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.option3)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.option4)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.option4)
+            </dd>
+        </dl>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Answer)
+            @Html.TextBoxFor(model => model.Answer, new { @class = "form-control" })
+        </div>
+        @Html.HiddenFor(model => model.MQ_id)
+        @Html.HiddenFor(model =>model.correct)
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" value="Save" class="btn js-delete" />
+        </div>
+        *@
+            @*   <div><button type="submit" data-question-id="@Model.MQ_id" data-question-Answer="@Model.Answer" class="btn-link" "js-delete" ></button> </div>
+
+    </div>
+           
+        }
+    </div>
+*@
+
+<h1>UnAuthorized</h1>
+<div id="s">  ssssssssssssssssss  </div>
+
+@section Scripts{
+
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+}
+

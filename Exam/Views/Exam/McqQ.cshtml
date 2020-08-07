@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Exam.Models.MCQquestion>
+
+@{
+    ViewBag.Title = "McqQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>McqQ</h2>
+
+
+<h2>NextQuestionMCQ</h2>
+@Html.DisplayNameFor(model => model.Chapter.Subject.name)
+
+
+<h4>Question</h4>
+<hr />
+<div>
+@foreach (var item in Model)
+{
+    <div >
+
+@using (Ajax.BeginForm("CorrectAnswerMCQ", "Exam", new AjaxOptions { HttpMethod = "Post", UpdateTargetId =item.MQ_id.ToString() , InsertionMode = InsertionMode.Replace }))
+{
+
+
+    <div id="@item.MQ_id.ToString()">  @Html.Partial("CorrectAnswer", item) </div>
+
+
+}
+        </div>
+}
+      </div>
+
+@section Scripts{
+
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+}

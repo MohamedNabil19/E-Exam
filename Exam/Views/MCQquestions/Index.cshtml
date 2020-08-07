@@ -1,0 +1,81 @@
+﻿
+@model IEnumerable<Exam.Models.MCQquestion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.option1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.optoin2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.option3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.option4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correct)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.def_level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chapter.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.option1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.optoin2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.option3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.option4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.def_level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chapter.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chapter.Subject.name)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MQ_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MQ_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MQ_id })
+        </td>
+    </tr>
+}
+
+</table>

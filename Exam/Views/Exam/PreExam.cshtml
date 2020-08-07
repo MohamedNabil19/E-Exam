@@ -1,0 +1,53 @@
+﻿@model Exam.Models.MCQquestion
+
+@{
+    ViewBag.Title = "PreExam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PreExam</h2>
+<div id="dd" style=:table-layout>
+
+    <h1> Now You Strat Your Exam !!!!!  </h1>
+
+
+    @Ajax.ActionLink("Start Exam", // <-- Text to display
+                     "questions", // <-- Action Method Name
+                     "Exam",
+                    "null",
+                     new AjaxOptions
+                     {
+                         UpdateTargetId = "dd", // <-- DOM element ID to update
+                         InsertionMode = InsertionMode.Replace, // <-- Replace the content of DOM element
+                         HttpMethod = "GET", // <-- HTTP method
+                         Confirm = "Do you want to get all student info ?????"
+                     }, new { @class = "btn btn-default" })
+
+
+
+
+
+    
+</div>
+
+
+
+   
+
+@*
+
+    @using (Ajax.BeginForm("CorrectAnswerMCQ", "Exam", new AjaxOptions { HttpMethod = "Post", UpdateTargetId ="ss", InsertionMode = InsertionMode.Replace }))
+    {
+
+
+
+            <div id="ss">  @Html.Partial("CorrectAnswer",Model) </div>
+
+
+    }
+*@
+
+
+@section scripts{
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+}

@@ -1,0 +1,109 @@
+﻿@model Exam.Models.TFquestion
+<div id="sse">
+    @using (Ajax.BeginForm("CorrectAnswerTF", "Exam", new AjaxOptions { HttpMethod = "Post", UpdateTargetId ="sse", InsertionMode = InsertionMode.Replace }))
+    {
+
+
+
+        <div class="box roundCorner">
+            <dl class="dl-horizontal">
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Chapter.name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Chapter.name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Chapter.Subject.name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Chapter.Subject.name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.def_level)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.def_level)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.content)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.content)
+                </dd>
+
+                @*
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Answer)
+                        @Html.TextBoxFor(model => model.Answer, new { @class = "form-control" })
+                    </div>
+                *@
+                <dt>
+                    @Html.DisplayNameFor(model => model.Answer)
+                </dt>
+                <dd>
+                    @Html.DropDownList("Answer", ViewData["opTF"] as List<SelectListItem>, htmlAttributes: new { @class = "control-label col-md-2 " })
+
+                    @*  @Html.EditorFor(model => model.correct, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.correct, "", new { @class = "text-danger" })
+                    *@
+
+                </dd>
+
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.TF_id)
+                @Html.HiddenFor(model => model.correct)
+
+
+
+                <dt></dt>
+                <dd>
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </dd>
+            </dl>
+        </div>
+    }
+</div>
+<style>
+    .roundCorner {
+        border-radius: 10px;
+        text-align: center;
+        font-family: arial, helvetica, sans-serif;
+        padding: 5px 10px 10px 10px;
+        font-weight: bold;
+    }
+
+    .box {
+        width: 400px;
+        height: 250px;
+        background: #c5baba;
+        margin: 20px 50px;
+    }
+
+    .circle {
+        border-radius: 50%;
+    }
+
+    .inner-border {
+        border-radius: 10px;
+        text-align: center;
+        font-family: arial, helvetica, sans-serif;
+        padding: 5px 10px 10px 10px;
+        font-weight: bold;
+        width: 100px;
+        height: 30px;
+    }
+
+    .inner-outline {
+        outline: 10px solid red;
+        outline-offset: -30px;
+    }
+</style>

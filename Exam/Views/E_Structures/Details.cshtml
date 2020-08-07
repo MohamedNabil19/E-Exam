@@ -1,0 +1,67 @@
+﻿@model Exam.Models.E_Structures
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>E_Structures</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Type_Q)
+        </dt>
+
+        <dd>
+            @ViewBag.type
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chapter.Subject.name)
+        </dt>
+
+        <dd>
+            @ViewBag.subname
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.def_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.def_level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumofQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumofQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chapter.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chapter.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamQuestion.E_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamQuestion.E_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.E_S_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

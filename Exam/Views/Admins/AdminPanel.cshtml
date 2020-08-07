@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "AdminPanel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AdminPanel</h2>
+
+<p>
+    @Html.ActionLink("Professors panel", "Index", "Professors") |
+@Html.ActionLink("Requests of Professors", "RequestProfessors", "Professors")
+</p>
+<p>
+    @Html.ActionLink("Students Panel", "Index", "Students") |
+    @Html.ActionLink("Requests of Students", "RequestStudents", "Students")|
+    </p>
+<p>
+    @Html.ActionLink("Subjects Panel", "Index", "Subjects") |
+    @Html.ActionLink("Departments", "Index", "Departments") |
+    @Html.ActionLink("Levels", "Index", "Levels") 
+
+
+</p>

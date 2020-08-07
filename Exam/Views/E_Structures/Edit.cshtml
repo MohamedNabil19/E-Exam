@@ -1,0 +1,116 @@
+﻿@model Exam.Models.E_Structures
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>@ViewBag.SubjectName</h1>
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>E_Structures</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.E_S_id)
+
+       
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Type_Q, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Type_Q", ViewData["listq"] as List<SelectListItem>, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                @*
+                 @Html.EditorFor(model => model.def_level, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.def_level, "", new { @class = "text-danger" })
+                *@
+            </div>
+        </div>
+
+        
+        
+        @*
+     <div class="form-group">
+        @Html.LabelFor(model => model.Type_Q, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Type_Q)
+                @Html.ValidationMessageFor(model => model.Type_Q, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+        *@
+@*
+    <div class="form-group">
+        @Html.LabelFor(model => model.S_id, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.S_id, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.S_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.def_level, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("def_level", ViewData["list_def"] as List<SelectListItem>, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                @*
+                 @Html.EditorFor(model => model.def_level, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.def_level, "", new { @class = "text-danger" })
+                *@
+            </div>
+        </div>
+
+@*
+    <div class="form-group">
+        @Html.LabelFor(model => model.def_level, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.def_level, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.def_level, "", new { @class = "text-danger" })
+        </div>
+    </div>
+*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumofQ, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NumofQ, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NumofQ, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    @Html.HiddenFor(model=>model.E_id)  
+        @Html.HiddenFor(model => model.S_id)
+
+  
+    @*
+    <div class="form-group">
+        @Html.LabelFor(model => model.E_id, "E_id", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("E_id", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.E_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+        *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.CH_id, "CH_id", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("CH_id", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CH_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="A_Rules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="A_id" Type="int" Nullable="false" />
+    <Property Name="R_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="A_id" />
+    </Key>
+    <Property Name="A_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="N_N" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="A_image" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="rule" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Chapters">
+    <Key>
+      <PropertyRef Name="CH_id" />
+    </Key>
+    <Property Name="CH_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="S_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="Dep_id" />
+    </Key>
+    <Property Name="Dep_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="E_Structures">
+    <Key>
+      <PropertyRef Name="E_S_id" />
+    </Key>
+    <Property Name="E_S_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type_Q" Type="bit" Nullable="false" />
+    <Property Name="S_id" Type="int" />
+    <Property Name="def_level" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NumofQ" Type="int" Nullable="false" />
+    <Property Name="E_id" Type="int" />
+    <Property Name="CH_id" Type="int" />
+    <Property Name="Post" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExamQuestions">
+    <Key>
+      <PropertyRef Name="E_id" />
+    </Key>
+    <Property Name="E_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="E_name" Type="varchar" MaxLength="255" />
+    <Property Name="S_id" Type="int" />
+    <Property Name="duration" Type="time" Precision="7" />
+    <Property Name="StausPost" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Levels">
+    <Key>
+      <PropertyRef Name="L_id" />
+    </Key>
+    <Property Name="L_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MCQquestions">
+    <Key>
+      <PropertyRef Name="MQ_id" />
+    </Key>
+    <Property Name="MQ_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="content" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="option1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="optoin2" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="option3" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="option4" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="correct" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="def_level" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CH_id" Type="int" Nullable="false" />
+    <Property Name="Answer" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="P_Rules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="P_id" Type="int" Nullable="false" />
+    <Property Name="R_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Professors">
+    <Key>
+      <PropertyRef Name="P_id" />
+    </Key>
+    <Property Name="P_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="emai" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="N_N" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="rule" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="approval" Type="bit" Nullable="false" />
+    <Property Name="P_image" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Results">
+    <Key>
+      <PropertyRef Name="ST_id" />
+      <PropertyRef Name="S_id" />
+    </Key>
+    <Property Name="ST_id" Type="int" Nullable="false" />
+    <Property Name="S_id" Type="int" Nullable="false" />
+    <Property Name="result" Type="float" Nullable="false" />
+    <Property Name="grade" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="S_GPA" Type="float" Nullable="false" />
+    <Property Name="StartExam" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ST_Rules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ST_id" Type="int" Nullable="false" />
+    <Property Name="R_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="ST_id" />
+    </Key>
+    <Property Name="ST_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="passwod" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="N_N" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="rule" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="approval" Type="bit" Nullable="false" />
+    <Property Name="L_id" Type="int" Nullable="false" />
+    <Property Name="Dep_id" Type="int" Nullable="false" />
+    <Property Name="total" Type="float" Nullable="false" />
+    <Property Name="ST_image" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Subjects">
+    <Key>
+      <PropertyRef Name="S_id" />
+    </Key>
+    <Property Name="S_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="P_id" Type="int" Nullable="false" />
+    <Property Name="L_id" Type="int" Nullable="false" />
+    <Property Name="Dep_id" Type="int" Nullable="false" />
+    <Property Name="hours" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TFquestions">
+    <Key>
+      <PropertyRef Name="TF_id" />
+    </Key>
+    <Property Name="TF_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="content" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="correct" Type="bit" Nullable="false" />
+    <Property Name="def_level" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CH_id" Type="int" Nullable="false" />
+    <Property Name="Answer" Type="bit" />
+  </EntityType>
+  <Association Name="FK__A_Rules__A_id__5A846E65">
+    <End Role="Admins" Type="Self.Admins" Multiplicity="1" />
+    <End Role="A_Rules" Type="Self.A_Rules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admins">
+        <PropertyRef Name="A_id" />
+      </Principal>
+      <Dependent Role="A_Rules">
+        <PropertyRef Name="A_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__A_Rules__R_id__5B78929E">
+    <End Role="Rules" Type="Self.Rules" Multiplicity="1" />
+    <End Role="A_Rules" Type="Self.A_Rules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rules">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="A_Rules">
+        <PropertyRef Name="R_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chapter__S_id__693CA210">
+    <End Role="Subjects" Type="Self.Subjects" Multiplicity="1" />
+    <End Role="Chapters" Type="Self.Chapters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="S_id" />
+      </Principal>
+      <Dependent Role="Chapters">
+        <PropertyRef Name="S_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__E_Structu__CH_id__6ABAD62E">
+    <End Role="Chapters" Type="Self.Chapters" Multiplicity="0..1" />
+    <End Role="E_Structures" Type="Self.E_Structures" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chapters">
+        <PropertyRef Name="CH_id" />
+      </Principal>
+      <Dependent Role="E_Structures">
+        <PropertyRef Name="CH_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__E_Structur__E_id__69C6B1F5">
+    <End Role="ExamQuestions" Type="Self.ExamQuestions" Multiplicity="0..1" />
+    <End Role="E_Structures" Type="Self.E_Structures" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExamQuestions">
+        <PropertyRef Name="E_id" />
+      </Principal>
+      <Dependent Role="E_Structures">
+        <PropertyRef Name="E_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Exams__S_id__02084FDA">
+    <End Role="Subjects" Type="Self.Subjects" Multiplicity="0..1" />
+    <End Role="ExamQuestions" Type="Self.ExamQuestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="S_id" />
+      </Principal>
+      <Dependent Role="ExamQuestions">
+        <PropertyRef Name="S_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__P_Rules__P_id__52E34C9D">
+    <End Role="Professors" Type="Self.Professors" Multiplicity="1" />
+    <End Role="P_Rules" Type="Self.P_Rules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professors">
+        <PropertyRef Name="P_id" />
+      </Principal>
+      <Dependent Role="P_Rules">
+        <PropertyRef Name="P_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__P_Rules__R_id__53D770D6">
+    <End Role="Rules" Type="Self.Rules" Multiplicity="1" />
+    <End Role="P_Rules" Type="Self.P_Rules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rules">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="P_Rules">
+        <PropertyRef Name="R_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ST_Rules__R_id__42ACE4D4">
+    <End Role="Rules" Type="Self.Rules" Multiplicity="1" />
+    <End Role="ST_Rules" Type="Self.ST_Rules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rules">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ST_Rules">
+        <PropertyRef Name="R_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ST_Rules__ST_id__43A1090D">
+    <End Role="Students" Type="Self.Students" Multiplicity="1" />
+    <End Role="ST_Rules" Type="Self.ST_Rules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="ST_id" />
+      </Principal>
+      <Dependent Role="ST_Rules">
+        <PropertyRef Name="ST_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MCQquestion_Chapter">
+    <End Role="Chapters" Type="Self.Chapters" Multiplicity="1" />
+    <End Role="MCQquestions" Type="Self.MCQquestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chapters">
+        <PropertyRef Name="CH_id" />
+      </Principal>
+      <Dependent Role="MCQquestions">
+        <PropertyRef Name="CH_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Result_Student">
+    <End Role="Students" Type="Self.Students" Multiplicity="1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="ST_id" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="ST_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Result_Subject">
+    <End Role="Subjects" Type="Self.Subjects" Multiplicity="1" />
+    <End Role="Results" Type="Self.Results" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="S_id" />
+      </Principal>
+      <Dependent Role="Results">
+        <PropertyRef Name="S_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Department">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+    <End Role="Students" Type="Self.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Dep_id" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="Dep_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Level">
+    <End Role="Levels" Type="Self.Levels" Multiplicity="1" />
+    <End Role="Students" Type="Self.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Levels">
+        <PropertyRef Name="L_id" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="L_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subject_Dep">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+    <End Role="Subjects" Type="Self.Subjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Dep_id" />
+      </Principal>
+      <Dependent Role="Subjects">
+        <PropertyRef Name="Dep_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subject_Level">
+    <End Role="Levels" Type="Self.Levels" Multiplicity="1" />
+    <End Role="Subjects" Type="Self.Subjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Levels">
+        <PropertyRef Name="L_id" />
+      </Principal>
+      <Dependent Role="Subjects">
+        <PropertyRef Name="L_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subject_Professor">
+    <End Role="Professors" Type="Self.Professors" Multiplicity="1" />
+    <End Role="Subjects" Type="Self.Subjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professors">
+        <PropertyRef Name="P_id" />
+      </Principal>
+      <Dependent Role="Subjects">
+        <PropertyRef Name="P_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TFquestion_Chapter">
+    <End Role="Chapters" Type="Self.Chapters" Multiplicity="1" />
+    <End Role="TFquestions" Type="Self.TFquestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chapters">
+        <PropertyRef Name="CH_id" />
+      </Principal>
+      <Dependent Role="TFquestions">
+        <PropertyRef Name="CH_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ExamModelStoreContainer">
+    <EntitySet Name="A_Rules" EntityType="Self.A_Rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chapters" EntityType="Self.Chapters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="E_Structures" EntityType="Self.E_Structures" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExamQuestions" EntityType="Self.ExamQuestions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Levels" EntityType="Self.Levels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MCQquestions" EntityType="Self.MCQquestions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="P_Rules" EntityType="Self.P_Rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Professors" EntityType="Self.Professors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rules" EntityType="Self.Rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ST_Rules" EntityType="Self.ST_Rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TFquestions" EntityType="Self.TFquestions" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__A_Rules__A_id__5A846E65" Association="Self.FK__A_Rules__A_id__5A846E65">
+      <End Role="Admins" EntitySet="Admins" />
+      <End Role="A_Rules" EntitySet="A_Rules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__A_Rules__R_id__5B78929E" Association="Self.FK__A_Rules__R_id__5B78929E">
+      <End Role="Rules" EntitySet="Rules" />
+      <End Role="A_Rules" EntitySet="A_Rules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chapter__S_id__693CA210" Association="Self.FK__Chapter__S_id__693CA210">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="Chapters" EntitySet="Chapters" />
+    </AssociationSet>
+    <AssociationSet Name="FK__E_Structu__CH_id__6ABAD62E" Association="Self.FK__E_Structu__CH_id__6ABAD62E">
+      <End Role="Chapters" EntitySet="Chapters" />
+      <End Role="E_Structures" EntitySet="E_Structures" />
+    </AssociationSet>
+    <AssociationSet Name="FK__E_Structur__E_id__69C6B1F5" Association="Self.FK__E_Structur__E_id__69C6B1F5">
+      <End Role="ExamQuestions" EntitySet="ExamQuestions" />
+      <End Role="E_Structures" EntitySet="E_Structures" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Exams__S_id__02084FDA" Association="Self.FK__Exams__S_id__02084FDA">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="ExamQuestions" EntitySet="ExamQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__P_Rules__P_id__52E34C9D" Association="Self.FK__P_Rules__P_id__52E34C9D">
+      <End Role="Professors" EntitySet="Professors" />
+      <End Role="P_Rules" EntitySet="P_Rules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__P_Rules__R_id__53D770D6" Association="Self.FK__P_Rules__R_id__53D770D6">
+      <End Role="Rules" EntitySet="Rules" />
+      <End Role="P_Rules" EntitySet="P_Rules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ST_Rules__R_id__42ACE4D4" Association="Self.FK__ST_Rules__R_id__42ACE4D4">
+      <End Role="Rules" EntitySet="Rules" />
+      <End Role="ST_Rules" EntitySet="ST_Rules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ST_Rules__ST_id__43A1090D" Association="Self.FK__ST_Rules__ST_id__43A1090D">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="ST_Rules" EntitySet="ST_Rules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MCQquestion_Chapter" Association="Self.FK_MCQquestion_Chapter">
+      <End Role="Chapters" EntitySet="Chapters" />
+      <End Role="MCQquestions" EntitySet="MCQquestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Result_Student" Association="Self.FK_Result_Student">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Result_Subject" Association="Self.FK_Result_Subject">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="Results" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Department" Association="Self.FK_Student_Department">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Level" Association="Self.FK_Student_Level">
+      <End Role="Levels" EntitySet="Levels" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subject_Dep" Association="Self.FK_Subject_Dep">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Subjects" EntitySet="Subjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subject_Level" Association="Self.FK_Subject_Level">
+      <End Role="Levels" EntitySet="Levels" />
+      <End Role="Subjects" EntitySet="Subjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subject_Professor" Association="Self.FK_Subject_Professor">
+      <End Role="Professors" EntitySet="Professors" />
+      <End Role="Subjects" EntitySet="Subjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TFquestion_Chapter" Association="Self.FK_TFquestion_Chapter">
+      <End Role="Chapters" EntitySet="Chapters" />
+      <End Role="TFquestions" EntitySet="TFquestions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

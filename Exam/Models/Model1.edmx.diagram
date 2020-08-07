@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4cd45638a82249b4b9738c96ae28ce1b" Name="Diagram1">
+        <EntityTypeShape EntityType="ExamModel.A_Rules" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Admin" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Chapter" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Department" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Level" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.MCQquestion" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.P_Rules" Width="1.5" PointX="6" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Professor" Width="1.5" PointX="3.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Result" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Rule" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.ST_Rules" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Student" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Subject" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.TFquestion" Width="1.5" PointX="10.5" PointY="8.625" IsExpanded="true" />
+        <AssociationConnector Association="ExamModel.FK__A_Rules__A_id__2704CA5F" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK__A_Rules__R_id__2610A626" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK__Chapter__S_id__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_MCQquestion_Chapter" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_TFquestion_Chapter" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_Student_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_Subject_Dep" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_Student_Level" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_Subject_Level" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK__P_Rules__P_id__2EA5EC27" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK__P_Rules__R_id__2DB1C7EE" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_Subject_Professor" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_Result_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_Result_Subject" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK__ST_Rules__R_id__29E1370A" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK__ST_Rules__ST_id__2AD55B43" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ExamModel.sysdiagram" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ExamModel.ExamQuestion" Width="1.5" PointX="8.25" PointY="10.375" />
+        <AssociationConnector Association="ExamModel.FK__Exams__S_id__02084FDA" />
+        <EntityTypeShape EntityType="ExamModel.E_Structures" Width="1.5" PointX="13.5" PointY="8.25" />
+        <AssociationConnector Association="ExamModel.FK__E_Structu__CH_id__6ABAD62E" />
+        <AssociationConnector Association="ExamModel.FK__E_Structur__E_id__69C6B1F5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

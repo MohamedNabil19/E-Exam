@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Exam.Models.Professor>
+
+@{
+    ViewBag.Title = "RequestProfessors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RequestProfessors</h2>
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.approval)
+        </th>
+       
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.approval)
+            </td>
+          
+            <td>
+                @Html.ActionLink("Approve", "Approve", new { id = item.P_id }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.P_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.P_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.P_id })
+            </td>
+        </tr>
+    }
+
+</table>

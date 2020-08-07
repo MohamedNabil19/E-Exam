@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Exam.Models.Result>
+@{
+    ViewBag.Title = "StudentExams";
+    Layout = "~/Views/Shared/_Layout_student.cshtml";
+}
+
+<h2>StudentExams</h2>
+
+<table class="table">
+   
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject.name)
+            </td>
+            <td>
+                @Html.ActionLink("Start Exam", "ModelExam","Exam", new { id = item.S_id },null) 
+               </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Exam.Models.E_Structures>
+
+@{
+    ViewBag.Title = "ShowExam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>@ViewBag.Sub_name</h1>
+<h2>ShowExam</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",new{id= ViewBag.Sub_id,Exam_id= ViewBag.Exam_id })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Type_Q)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.def_level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumofQ)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.Chapter.name)
+        </th>
+       
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+            
+            @if(item.Type_Q==true)
+            {
+                <p>True or False</p>
+            }
+            else 
+           { <p> MCQ </p>  }
+
+
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.def_level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumofQ)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Chapter.name)
+            </td>
+     
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.E_S_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.E_S_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.E_S_id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,65 @@
+﻿@model Exam.Models.Admin
+@{
+    ViewBag.Title = "AdminPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AdminPage</h2>
+
+<div>
+    <h4>Admin</h4>
+    <hr />
+    <div class="display-field">
+        <img src="@Url.Content(@Model.A_image)" alt="ss" width="200" height="200" style='border-radius: 50%' />
+    </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N_N)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N_N)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.A_image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.A_image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+    </dl>
+</div>

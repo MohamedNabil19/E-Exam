@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Exam.Models.Subject>
+
+@{
+    ViewBag.Title = "ProfessorSubjects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProfessorSubjects</h2>
+
+@Html.ActionLink("AddExam", "AddExam", "ExamQuestions")
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Level.L_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Professor.name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Level.L_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Professor.name)
+            </td>
+            <td>
+               
+                @Html.ActionLink("Details", "Details", new { id = item.S_id }) |
+                @Html.ActionLink("Chapters", "ChaptersofS", "Chapters", new { id = item.S_id }, null) |
+                @Html.ActionLink("Students'Results", "ResultofS", "Results", new { id = item.S_id }, null) | 
+                @Html.ActionLink("MCQ Questions", "Sub_Q", "MCQquestions", new { id = item.S_id }, null) |
+                @Html.ActionLink("TF Questions", "Sub_Q", "TFquestions", new { id = item.S_id }, null) |
+                @Html.ActionLink("Exams", "Sub_Exam", "ExamQuestions", new { id = item.S_id }, null)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  
+
+            </td>
+        </tr>
+    }
+
+</table>

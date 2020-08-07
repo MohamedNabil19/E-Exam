@@ -1,0 +1,83 @@
+﻿@model Exam.Models.Professor
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Professor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N_N)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N_N)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rule)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rule)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.approval)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.approval)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_image)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.P_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
